@@ -1,0 +1,105 @@
+/* Apex CSS */
+.Outer_Container
+{
+    height: 100vh;
+    background-color: #81d4fa;
+}
+
+/* Font Manipulation */
+.fontFamily{
+    font-family: ubuntu;
+}
+
+.Heading_Bold
+{
+    font-weight: bold;
+    font-size: 40px;
+    
+}
+
+.Heading_SemiBold
+{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.Inner_Container
+{
+    padding-bottom: 15px;
+    text-align: left;
+}
+
+.smallFont
+{
+    font-size: 12px;
+}
+/* Color Pallete */
+/* 
+Selected Colors
+Pink:
+Dark Pink: #ec407a
+Light Pink: #f06292
+
+Blue 
+Dark: #29b6f6
+Light: #81d4fa
+
+Yellow
+Dark: #d4e157
+Light: #e6ee9c
+*/
+.Color_Pallete_Container
+{
+    padding: 20px 0px;
+}
+
+.Color_Pallete_Inner_Shell
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: brown;
+}
+
+.Color_Pallete_Outer_Shell
+{
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: rgb(235, 142, 142);
+}
+
+.Color_Pallete_Complete_Shell
+{
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: brown;
+  
+}
+
+.Color_Light_Pink
+{
+    background-color: #f06292;
+}
+.Color_Dark_Pink
+{
+    background-color: #ec407a;
+}
+.Color_Dark_Blue
+{
+    background-color: #29b6f6;
+}
+.Color_Light_Blue
+{
+    background-color: #81d4fa;
+}
+.Color_Dark_Yellow
+{
+    background-color: #d4e157;
+}
+.Color_Light_Yellow
+{
+    background-color: #e6ee9c;
+}
+

@@ -1,0 +1,26 @@
+
+/* Upload Button  */
+
+.Button_Container
+{
+    width: 45%;
+    background-color: #d4e157;
+    padding: 8px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+.Button_Text
+{
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.Icon
+{
+    color: white;
+}
