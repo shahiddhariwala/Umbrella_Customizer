@@ -1,18 +1,27 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import Styles from "./index.module.css";
-import Spinner from '../../components/Spinner';
+import ImageEditor from '../../components/ImageEditor';
 import UploadButton from "../../components/UploadButton";
+import ColorPallete from "../../components/ColorPallete";
+import { connect } from "react-redux";
 
-const Customizer = () => {
+const umbrellas = {
+    pink: "#f079a1",
+    blue: "#a9e0fa",
+    yellow: "#e3e9ad",
+
+}
+
+const Customizer = (props) => {
     return (
         <>
-            <Grid container className={Styles.Outer_Container}>
+            <Grid container className={Styles.Outer_Container} style={{ backgroundColor: umbrellas[props.selectedUmbrella] }}>
                 <Grid item xs={6} >
                     {/* Preview */}
                     <Grid container direction="column" justify="center" alignItems="center" className={Styles.Outer_Container}>
                         <Grid item>
-                            <Spinner />
+                            <ImageEditor />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -23,33 +32,7 @@ const Customizer = () => {
                             <span className={`${Styles.Heading_Bold} ${Styles.fontFamily}`}> Custom Umbrella</span>
                         </Grid>
                         <Grid item>
-                            <Grid container spacing={1} alignItems="center" className={`${Styles.Color_Pallete_Container}`}>
-                                <Grid item xs={1}>
-                                    <div className={`${Styles.Color_Pallete_Outer_Shell} ${Styles.Color_Light_Pink} `}>
-                                        {/* Outer Circle */}
-                                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Dark_Pink}`}>
-                                            {/* Inner Circle */}
-
-                                        </div>
-                                    </div>
-                                </Grid>
-                                <Grid item xs={1}>
-                                    <div className={`${Styles.Color_Pallete_Outer_Shell} ${Styles.Color_Light_Blue}`}>
-                                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Dark_Blue}`}>
-                                            {/* Inner Circle */}
-
-                                        </div>
-                                    </div>
-                                </Grid>
-                                <Grid item xs={1}>
-                                    <div className={`${Styles.Color_Pallete_Complete_Shell} ${Styles.Color_Light_Yellow}`}>
-                                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Dark_Yellow}`}>
-                                            {/* Inner Circle */}
-
-                                        </div>
-                                    </div>
-                                </Grid>
-                            </Grid>
+                            <ColorPallete />
                         </Grid>
                         <Grid item>
                             <div className={Styles.Inner_Container}>
@@ -71,4 +54,11 @@ const Customizer = () => {
     );
 }
 
-export default Customizer;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        selectedUmbrella: state.selectedUmbrella,
+    }
+}
+
+
+export default connect(mapStateToProps)(Customizer);

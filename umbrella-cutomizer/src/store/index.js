@@ -2,6 +2,7 @@
 
 const initialState = {
     file: "",
+    selectedUmbrella: "pink",
 }
 
 const reducer = (state = initialState, action) => {
@@ -15,6 +16,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 file: "",
+            };
+        case "SELECT_UMBRELLA":
+            return {
+                ...state,
+                selectedUmbrella: action.umbrella,
             };
         default:
             return { ...state }

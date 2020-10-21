@@ -5,6 +5,12 @@ import BackupOutlinedIcon from '@material-ui/icons/BackupOutlined';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 import { connect } from "react-redux";
 
+const umbrellas = {
+    pink: "#ec407a",
+    blue: "#29b6f6",
+    yellow: "#d4e157",
+
+}
 const UploadButton = (props) => {
 
     //State
@@ -67,7 +73,7 @@ const UploadButton = (props) => {
     console.log("Props Redux", props);
     return (
         <>
-            <div className={Styles.Button_Container}>
+            <div className={Styles.Button_Container} style={{backgroundColor: umbrellas[props.selectedUmbrella]}}>
                 <Grid container >
                     <Grid item xs={1}>
                         <BackupOutlinedIcon className={`${Styles.Icon}`} />
@@ -93,7 +99,8 @@ const UploadButton = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        fileSelected: state.file
+        fileSelected: state.file,
+        selectedUmbrella: state.selectedUmbrella,
     }
 }
 
