@@ -4,6 +4,7 @@ import BlueUmbrella from "../../assets/blueUmbrella.png";
 import PinkUmbrella from "../../assets/pinkUmbrella.png";
 import YellowUmbrella from "../../assets/yellowUmbrella.png";
 import { connect } from "react-redux";
+import Styles from "./index.module.css";
 
 const umbrellas = {
     pink: PinkUmbrella,
@@ -14,12 +15,28 @@ const umbrellas = {
 
 const ImageEditor = (props) => {
 
-    const [loader, setLoader] = useState(false);
+    //State
+    const [loader, setLoader] = useState(true);
+
+    //Lifecycle
+    useEffect(() => {
+        setLoader(true);
+        setTimeout(() => {
+            setLoader(false);
+        }, 2000);
+    }, [props.fileSelected]);
+
     return (
         <>
             {loader ? <Spinner /> :
                 <>
-                    <img src={umbrellas[props.selectedUmbrella]} style={{ height: "50vh" }} />
+                    <div className={Styles.Outer_Container}>
+                        <img src={umbrellas[props.selectedUmbrella]} style={{ height: "50vh" }} alt={"ubrella"} />
+                        <div className={Styles.Overlay}><img src={props.fileSelected ? URL.createObjectURL(props.fileSelected) : null}
+                            alt={props.fileSelected ? props.fileSelected.name : ""}
+                            style={{ height: "4vh" }}
+                        /></div>
+                    </div>
                 </>
             }
 
@@ -30,6 +47,7 @@ const ImageEditor = (props) => {
 const mapStateToProps = (state, ownProps) => {
     return {
         selectedUmbrella: state.selectedUmbrella,
+        fileSelected: state.file,
     }
 }
 

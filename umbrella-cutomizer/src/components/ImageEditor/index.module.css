@@ -1,0 +1,28 @@
+* {box-sizing: border-box;}
+
+
+.Outer_Container {
+  position: fixed;
+  width: 50%;
+  max-width: 300px;
+  left: 10vw;
+  top: 25vh;
+  transition: .5s ease;
+}
+
+.Overlay {
+  position: fixed; 
+  bottom: 0; 
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  left:-24vw;
+  top: 65vh;
+}
+
+

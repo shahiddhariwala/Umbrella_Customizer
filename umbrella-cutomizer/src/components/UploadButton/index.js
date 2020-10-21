@@ -107,7 +107,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         uploadSelectedFile: (file) => dispatch({ type: "STORE_LOGO", file: file }),
-        removeSelectedFile: (file) => dispatch({ type: "REMOVE_LOGO" }),
+        removeSelectedFile: () => dispatch({ type: "REMOVE_LOGO" }),
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(UploadButton);
