@@ -8,9 +8,9 @@ import { connect } from "react-redux";
 const umbrellas = {
     pink: "#ec407a",
     blue: "#29b6f6",
-    yellow: "#d4e157",
-
+    yellow: "#FACD3F",
 }
+
 const UploadButton = (props) => {
 
     //State
