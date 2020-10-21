@@ -18,7 +18,7 @@ const Customizer = () => {
                 </Grid>
                 <Grid item xs={6} >
                     {/* Tools */}
-                    <Grid container direction="column" justify="center" alignItems="left" className={Styles.Outer_Container}>
+                    <Grid container direction="column" justify="center" className={Styles.Outer_Container}>
                         <Grid item>
                             <span className={`${Styles.Heading_Bold} ${Styles.fontFamily}`}> Custom Umbrella</span>
                         </Grid>

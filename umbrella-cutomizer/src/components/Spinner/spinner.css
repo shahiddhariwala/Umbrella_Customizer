@@ -1,7 +1,6 @@
 .Spinner {
-    height: 40vmin;
+    height: 20vmin;
     pointer-events: none;
-    fill: brown;
     animation: App-logo-spin infinite 5s linear;
   }
   

@@ -3,8 +3,9 @@ import { Grid } from "@material-ui/core"
 import Styles from "./index.module.css";
 import BackupOutlinedIcon from '@material-ui/icons/BackupOutlined';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
+import { connect } from "react-redux";
 
-const UploadButton = () => {
+const UploadButton = (props) => {
 
     //State
     const [fileSelected, setFileSelected] = useState();
@@ -28,6 +29,7 @@ const UploadButton = () => {
             //Validate
             if (validateFileType(file.name) && validateFileSize(file.size)) {
                 setFileSelected(file);
+                props.uploadSelectedFile(file);
             }
         }
         catch (e) {
@@ -57,10 +59,12 @@ const UploadButton = () => {
 
     const removeSelectedFile = () => {
         setFileSelected("");
+        props.removeSelectedFile();
         setFileSizeError(false);
         setFileTypeError(false);
     }
 
+    console.log("Props Redux", props);
     return (
         <>
             <div className={Styles.Button_Container}>
@@ -87,4 +91,16 @@ const UploadButton = () => {
     );
 }
 
-export default UploadButton;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        fileSelected: state.file
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        uploadSelectedFile: (file) => dispatch({ type: "STORE_LOGO", file: file }),
+        removeSelectedFile: (file) => dispatch({ type: "REMOVE_LOGO" }),
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(UploadButton);
