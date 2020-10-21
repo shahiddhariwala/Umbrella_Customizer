@@ -20,14 +20,18 @@ Light: #e6ee9c
 
 .Color_Pallete_Inner_Shell
 {
+    position: absolute;
     width: 20px;
     height: 20px;
     border-radius: 100px;
     background-color: brown;
+    left: 2.5px;
+    top: 2px;
 }
 
 .Color_Pallete_Outer_Shell
 {
+    position: relative;
     width: 25px;
     height: 25px;
     border-radius: 100px;
@@ -57,7 +61,7 @@ Light: #e6ee9c
 }
 .Color_Light_Blue
 {
-    background-color: #81d4fa;
+    background-color: #a9e0fa;
 }
 .Color_Dark_Yellow
 {

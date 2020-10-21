@@ -24,11 +24,11 @@ const ImageEditor = (props) => {
         setTimeout(() => {
             setLoader(false);
         }, 2000);
-    }, [props.fileSelected]);
+    }, [props.fileSelected, props.selectedUmbrella]);
 
     return (
         <>
-            {loader ? <Spinner /> :
+            {loader ? <Spinner umbrella={props.selectedUmbrella} /> :
                 <>
                     <div className={Styles.Outer_Container}>
                         <img src={umbrellas[props.selectedUmbrella]} style={{ height: "50vh" }} alt={"ubrella"} />

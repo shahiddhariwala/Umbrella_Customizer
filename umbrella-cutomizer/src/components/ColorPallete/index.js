@@ -19,25 +19,25 @@ const ColorPallete = (props) => {
         <>
             <Grid container spacing={1} alignItems="center" className={`${Styles.Color_Pallete_Container}`}>
                 <Grid item xs={1}>
-                    <div className={`${Styles.Color_Pallete_Outer_Shell} ${Styles.Color_Light_Pink} `} onClick={() => selectUmbrellaHandler("pink")}>
+                    <div className={`${Styles.Color_Pallete_Outer_Shell} ${Styles.Color_Dark_Pink} `} onClick={() => selectUmbrellaHandler("pink")}>
                         {/* Outer Circle */}
-                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Dark_Pink}`}>
+                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Light_Pink}`}>
                             {/* Inner Circle */}
 
                         </div>
                     </div>
                 </Grid>
                 <Grid item xs={1}>
-                    <div className={`${Styles.Color_Pallete_Outer_Shell} ${Styles.Color_Light_Blue}`} onClick={() => selectUmbrellaHandler("blue")}>
-                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Dark_Blue}`}>
+                    <div className={`${Styles.Color_Pallete_Outer_Shell} ${Styles.Color_Dark_Blue}`} onClick={() => selectUmbrellaHandler("blue")}>
+                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Light_Blue}`}>
                             {/* Inner Circle */}
 
                         </div>
                     </div>
                 </Grid>
                 <Grid item xs={1}>
-                    <div className={`${Styles.Color_Pallete_Complete_Shell} ${Styles.Color_Light_Yellow}`} onClick={() => selectUmbrellaHandler("yellow")}>
-                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Dark_Yellow}`}>
+                    <div className={`${Styles.Color_Pallete_Outer_Shell} ${Styles.Color_Dark_Yellow}`} onClick={() => selectUmbrellaHandler("yellow")}>
+                        <div className={`${Styles.Color_Pallete_Inner_Shell} ${Styles.Color_Light_Yellow}`}>
                             {/* Inner Circle */}
 
                         </div>
@@ -49,7 +49,8 @@ const ColorPallete = (props) => {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-
+        fileSelected: state.file,
+        selectedUmbrella: state.selectedUmbrella,
     }
 }
 
