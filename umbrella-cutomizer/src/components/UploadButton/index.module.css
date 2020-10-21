@@ -25,3 +25,9 @@
 {
     color: white;
 }
+
+.ErrorOcurred
+{
+    font-family: ubuntu;
+    color: red;
+}
